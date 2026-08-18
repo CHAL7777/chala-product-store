@@ -6,6 +6,8 @@ import { useWishlist } from '../context/WishlistContext';
 import { useToast } from '../context/ToastContext';
 import { Badge } from './ui/Skeleton';
 
+import TransparentImage from './ui/TransparentImage';
+
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(ShopContext);
   const { isInWishlist, toggleWishlist } = useWishlist();
@@ -47,13 +49,13 @@ const ProductCard = ({ product }) => {
     <div className="product-card group flex flex-col justify-between h-full">
       <div>
         {/* Image Container with Top-to-Bottom overlay reveal effect */}
-        <div className="card-image-wrap aspect-square w-full bg-zinc-950/80 relative">
-          <Link to={`/products/${id}`} aria-label={`View ${name}`}>
-            <img
+        <div className="card-image-wrap aspect-square w-full bg-zinc-900/60 rounded-xl overflow-hidden relative flex items-center justify-center p-3">
+          <Link to={`/products/${id}`} aria-label={`View ${name}`} className="w-full h-full flex items-center justify-center">
+            <TransparentImage
               src={image}
               alt={name}
               loading="lazy"
-              className="h-full w-full object-cover object-center"
+              className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
             />
           </Link>
 

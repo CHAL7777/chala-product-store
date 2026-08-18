@@ -28,19 +28,20 @@ const ProductsPage = ({ defaultCategory = 'all' }) => {
   } = useProducts(defaultCategory);
 
   return (
-    <div className="section-container py-10 space-y-8">
+    <div className="section-container py-12 md:py-16 space-y-10">
       {/* Header Banner */}
-      <div className="text-center space-y-3 max-w-2xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-100">
-          Explore Footwear
+      <div className="text-center space-y-4 max-w-2xl mx-auto">
+        <span className="eyebrow">The SoleFlow edit</span>
+        <h1 className="text-4xl md:text-6xl font-black tracking-[-0.05em] text-zinc-100">
+          Find your next pair
         </h1>
-        <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-          Premium collection engineered for peak athletic performance and street-ready style.
+        <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+          Premium footwear engineered for peak performance, effortless comfort, and street-ready style.
         </p>
       </div>
 
       {/* Top Controls Bar */}
-      <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-zinc-900/40 p-4 border border-zinc-800/80 rounded-2xl">
+      <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-zinc-900/55 p-3.5 md:p-4 border border-white/10 rounded-2xl shadow-xl shadow-black/10 backdrop-blur-xl">
         {/* Search */}
         <div className="w-full md:max-w-md">
           <SearchBar onSearch={setSearchQuery} />
@@ -70,7 +71,7 @@ const ProductsPage = ({ defaultCategory = 'all' }) => {
       {/* Main Content Layout */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
         {/* Desktop Sidebar */}
-        <div className="hidden md:block md:col-span-1 sticky top-24">
+        <div className="hidden md:block md:col-span-1 sticky top-28">
           <FilterSidebar
             category={selectedCategory}
             onCategoryChange={setSelectedCategory}

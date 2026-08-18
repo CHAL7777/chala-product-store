@@ -7,6 +7,8 @@ import products from '../data/products';
 import { ShopContext } from '../context/ShopContext';
 import { useToast } from '../context/ToastContext';
 
+import TransparentImage from './ui/TransparentImage';
+
 // Select 3 showcase hero products from products dataset
 const heroProducts = [
   {
@@ -232,12 +234,12 @@ const Hero = () => {
                       ease: 'easeInOut',
                     },
                   }}
-                  className="relative z-20 w-[90%] drop-shadow-[0_35px_35px_rgba(0,0,0,0.7)]"
+                  className="relative z-20 w-[90%] filter drop-shadow-[0_35px_35px_rgba(0,0,0,0.8)]"
                 >
-                  <img
+                  <TransparentImage
                     src={activeHero.images[0]}
                     alt={activeHero.name}
-                    className="w-full h-full object-contain pointer-events-none filter drop-shadow-2xl"
+                    className="w-full h-full object-contain pointer-events-none"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -262,7 +264,7 @@ const Hero = () => {
                     aria-label={`Select ${item.name}`}
                   >
                     <div className="w-12 h-12 bg-zinc-950 rounded-xl p-1 overflow-hidden shrink-0 flex items-center justify-center">
-                      <img src={item.images[0]} alt={item.name} className="w-full h-full object-contain" />
+                      <TransparentImage src={item.images[0]} alt={item.name} className="w-full h-full object-contain" />
                     </div>
                     <div className="text-left pr-2 hidden sm:block">
                       <p className="text-xs font-bold text-zinc-200 line-clamp-1">{item.name}</p>

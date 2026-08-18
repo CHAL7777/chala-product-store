@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`text-white py-3.5 z-50 transition-all duration-300 ${
+      className={`text-white py-3 sm:py-4 z-50 transition-all duration-300 ${
         isHome
           ? 'absolute top-0 left-0 right-0'
           : 'bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/80 sticky top-0'
@@ -40,7 +40,7 @@ const Navbar = () => {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className='section-container flex justify-between items-center'>
+      <div className={`section-container flex justify-between items-center ${isHome ? 'rounded-2xl border border-white/10 bg-zinc-950/45 px-4 py-2.5 backdrop-blur-xl shadow-2xl shadow-black/10 sm:px-5' : ''}`}>
         {/* Logo & Brand */}
         <Link to="/" aria-label="SoleFlow Home" className="flex items-center gap-2">
           <img src={Logo} alt="SoleFlow logo" className='max-w-[90px] invert brightness-200' />
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <Link
                   to={item.link}
                   className={`inline-block text-xs font-semibold py-2 px-3 uppercase tracking-wider rounded-lg transition-all duration-200 ${
-                    location.pathname === item.link
+                    (item.link === '/' ? location.pathname === '/' : location.pathname.startsWith(item.link))
                       ? 'text-brand bg-brand/10 border border-brand/20'
                       : 'text-zinc-300 hover:text-zinc-100 hover:bg-zinc-800/60'
                   }`}

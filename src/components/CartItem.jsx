@@ -4,6 +4,8 @@ import { Plus, Minus, Trash2 } from 'lucide-react';
 import { ShopContext } from '../context/ShopContext';
 import { useToast } from '../context/ToastContext';
 
+import TransparentImage from './ui/TransparentImage';
+
 const CartItem = ({ product, quantity }) => {
   const { addToCart, removeFromCart, removeFromCartCompletely } = useContext(ShopContext);
   const { addToast } = useToast();
@@ -21,8 +23,8 @@ const CartItem = ({ product, quantity }) => {
     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-zinc-900/60 border border-zinc-800 rounded-xl gap-4 transition-all hover:border-zinc-700">
       {/* Product Image & Details */}
       <div className="flex items-center gap-4 w-full sm:w-auto">
-        <Link to={`/products/${product.id}`} className="shrink-0 rounded-lg overflow-hidden bg-zinc-950 border border-zinc-800 w-20 h-20 p-1">
-          <img src={image} alt={product.name} className="w-full h-full object-contain" />
+        <Link to={`/products/${product.id}`} className="shrink-0 rounded-lg overflow-hidden bg-zinc-950 border border-zinc-800 w-20 h-20 p-1 flex items-center justify-center">
+          <TransparentImage src={image} alt={product.name} className="w-full h-full object-contain" />
         </Link>
         <div className="space-y-1 flex-1">
           <Link to={`/products/${product.id}`} className="font-semibold text-zinc-100 text-base hover:text-brand transition-colors line-clamp-1">
