@@ -154,6 +154,26 @@
   .section-heading {
     @apply text-3xl sm:text-4xl font-black tracking-[-0.04em] text-zinc-100;
   }
+
+  .profile-input {
+    @apply w-full rounded-xl border border-white/10 bg-zinc-950/80 px-3.5 py-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-brand/60 focus:ring-2 focus:ring-brand/10;
+  }
+
+  .profile-action {
+    @apply flex items-center gap-3 rounded-2xl border border-white/5 bg-white/[0.03] p-3 transition-all hover:border-brand/30 hover:bg-white/[0.06];
+  }
+
+  .profile-action strong {
+    @apply block text-sm font-bold text-zinc-200;
+  }
+
+  .profile-action small {
+    @apply block mt-0.5 text-xs text-zinc-500;
+  }
+
+  .profile-action-icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border;
+  }
 }
 
 /* ============================================

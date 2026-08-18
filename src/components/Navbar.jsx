@@ -99,13 +99,18 @@ const Navbar = () => {
             )}
           </Link>
 
-          {/* Account Button */}
-          <button
-            className='inline-flex items-center justify-center p-2.5 rounded-xl text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 transition-all ml-1'
-            aria-label="User account"
+          {/* Profile link */}
+          <Link
+            to='/profile'
+            className={`inline-flex items-center justify-center p-2.5 rounded-xl transition-all ml-1 ${
+              location.pathname === '/profile'
+                ? 'text-brand bg-brand/10'
+                : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60'
+            }`}
+            aria-label="Open profile"
           >
             <FaRegUser size={15} />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile menu icon controls */}

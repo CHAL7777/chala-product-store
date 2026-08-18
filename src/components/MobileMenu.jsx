@@ -30,7 +30,13 @@ const MobileMenu = ({ showMenu, setShowMenu }) => {
             <FaUserCircle size={44} className='text-zinc-400' />
             <div>
               <h2 className='text-white font-medium'>Welcome</h2>
-              <p className='text-xs text-zinc-500'>SoleFlow Store</p>
+              <Link
+                to="/profile"
+                onClick={() => setShowMenu(false)}
+                className='text-xs text-brand hover:text-brand-light transition-colors'
+              >
+                View your profile
+              </Link>
             </div>
           </div>
 
